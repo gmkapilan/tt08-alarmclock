@@ -18,8 +18,7 @@ tt_um_ClockAlarm my_alarm(
   .rst_n(rst_n),
   .alarm_hours(ui_in[4:0]),
   .alarm_minutes({uio_in[2:0], ui_in[7:5]}), 
-  .ena(uio_in[3]), 
-  //output
+   //output
   .hours(uo_out[4:0]),
   .minutes(minutes_out),
   .alarm(uo_out[5])  
@@ -31,6 +30,6 @@ assign uio_out[6:4] = minutes_out[5:3];
 assign uio_out[7] = 1'b0;
 assign uio_out[3:0] = 4'b0;
     
-wire _unused = & {uio_in[7:4]};
+wire _unused = & {uio_in[7:3]};
 endmodule
 
