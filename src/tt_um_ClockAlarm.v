@@ -24,17 +24,17 @@ module tt_um_ClockAlarm(
           seconds <= seconds + 6'd1;
      
      if (seconds == 6'd59) begin
-          seconds <= 2'd0;
+          seconds <= 6'd0;
           minutes <= minutes + 3'd1;
      end
 
     if (minutes == 6'd59 && seconds == 6'd59) begin
-          minutes <= 3'd0;
+          minutes <= 6'd0;
           hours <= hours + 5'd1;
     end
 
     if (hours == 5'd23 && minutes == 6'd59 && seconds == 6'd59) begin
-          hours <= 2'd0;
+          hours <= 5'd0;
     end
 
     if ((hours == alarm_hours) && (minutes == alarm_minutes)) begin
