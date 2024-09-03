@@ -4,8 +4,7 @@ module tt_um_ClockAlarm(
   input wire rst_n,
   input wire [4:0] alarm_hours,
   input wire [5:0] alarm_minutes, 
-  input wire ena, 
- 
+  
   //Output time in the clock
   output reg [4:0] hours,
   output reg [5:0] minutes, 
