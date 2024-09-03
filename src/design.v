@@ -7,14 +7,14 @@ module ClockAlarm(
   //input wire [7:0] preset_minutes, 
   //input wire [7:0] preset_seconds, 
   //Input at which Alarm should go off
-  input wire [7:0] alarm_hours,
-  input wire [7:0] alarm_minutes, 
-  input wire [7:0] alarm_seconds, 
+  input wire [1:0] alarm_hours,
+  input wire [1:0] alarm_minutes, 
+  input wire [3:0] alarm_seconds, 
  
   //Output time in the clock
-  output reg [7:0] hours,
-  output reg [7:0] minutes, 
-  output reg [7:0] seconds, 
+  output reg [1:0] hours,
+  output reg [1:0] minutes, 
+  output reg [3:0] seconds, 
   output reg alarm
 );
 
@@ -27,20 +27,20 @@ module ClockAlarm(
           alarm <= 1'b0;
       end else begin
 
-          seconds <= seconds + 8'd1;
+          seconds <= seconds + 4'd1;
 
-          if (seconds == 8'd59) begin
-              seconds <= 8'd0;
-              minutes <= minutes + 8'd1;
+        if (seconds == 4'd15) begin
+              seconds <= 4'd0;
+              minutes <= minutes + 2'd1;
           end
 
-          if (minutes == 8'd59 && seconds == 8'd59) begin
-              minutes <= 8'd0;
-              hours <= hours + 8'd1;
+        if (minutes == 2'd3 && seconds == 4'd15) begin
+              minutes <= 2'd0;
+              hours <= hours + 2'd1;
           end
 
-          if (hours == 8'd23 && minutes == 8'd59 && seconds == 8'd59) begin
-              hours <= 8'd0;
+        if (hours == 2'd3 && minutes == 2'd3 && seconds == 4'd15) begin
+              hours <= 2'd0;
           end
 
 
