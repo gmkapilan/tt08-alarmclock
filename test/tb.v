@@ -20,7 +20,7 @@ module tb ();
   reg [2:0] alarm_minutes;
   
   // Replace tt_um_example with your module name:
-  tt_um_kapilan_alarm my_alarm (
+  tt_um_kapilan_alarm dut (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
