@@ -1,3 +1,5 @@
+`default_nettype none
+
 // Code your design here
 module tt_um_kapilan_alarm (
     input  wire [7:0] ui_in,    // Dedicated inputs
@@ -26,6 +28,9 @@ tt_um_ClockAlarm my_alarm(
 assign uio_oe = 8'b1111_0000;
 assign uo_out[7:5] = minutes_out[2:0];
 assign uio_out[6:4] = minutes_out[5:3];
-
+assign uio_out[7] = 1'b0;
+assign uio_out[3:0] = 4'b0;
+    
+wire _unused = & {uio_in[7:4]};
 endmodule
 
