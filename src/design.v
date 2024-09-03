@@ -1,5 +1,5 @@
 // Code your design here
-module ClockAlarm(
+module tt_um_ClockAlarm(
   input wire clk,
   input wire reset,
   //Input time to the clock to preset
