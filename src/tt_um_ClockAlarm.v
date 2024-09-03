@@ -14,7 +14,7 @@ module tt_um_ClockAlarm(
   reg [5:0] seconds;
   
   always @(posedge clk or negedge rst_n) begin
-    if (rst_n) begin
+    if (!rst_n) begin
           hours <= 0;
           minutes <= 0;
           seconds <= 0;
