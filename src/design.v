@@ -29,6 +29,6 @@ assign uo_out[7:5] = minutes_out[2:0];
 assign uio_out[6:4] = minutes_out[5:3];
 assign uio_out[3:0] = 4'b0;
     
-wire _unused = & {uio_in[7:3]};
+wire _unused = & {uio_in[7:3], ena};
 endmodule
 
