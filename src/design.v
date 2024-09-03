@@ -25,7 +25,7 @@ tt_um_ClockAlarm my_alarm(
 
 assign uio_oe = 8'b1111_0000;
 assign uo_out[7:5] = minutes_out[2:0];
-assign uio_out[7:4] = minutes_out[5:3];
+assign uio_out[6:4] = minutes_out[5:3];
 
 endmodule
 
