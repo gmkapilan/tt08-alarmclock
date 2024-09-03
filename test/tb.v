@@ -33,7 +33,7 @@ module tb ();
     .uio_in({5'b0,alarm_minutes[5:3]}),
     .uio_out(),
     .uio_oe(),
-    .ena(1'b1),
+    .ena(),
     .clk(clk),
     .rst_n(rst_n)
   );
