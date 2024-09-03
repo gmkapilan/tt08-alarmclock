@@ -1,7 +1,7 @@
 // Code your design here
 module tt_um_ClockAlarm(
   input wire clk,
-  input wire reset,
+  input wire rst_n,
   //Input time to the clock to preset
   //input wire [7:0] preset_hours,
   //input wire [7:0] preset_minutes, 
@@ -19,8 +19,8 @@ module tt_um_ClockAlarm(
 );
 
 
-  always @(posedge clk or posedge reset) begin
-      if (reset) begin
+  always @(posedge clk or posedge rst_n) begin
+    if (rst_n) begin
           hours <= 0;
           minutes <= 0;
           seconds <= 0;
