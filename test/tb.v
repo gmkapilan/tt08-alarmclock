@@ -16,16 +16,11 @@ module tb ();
   // Wire up the inputs and outputs:
   reg clk;
   reg rst_n;
-  reg ena;
-   reg [1:0] alarm_hours;
-   reg [2:0] alarm_minutes;
-   wire [1:0] hours;
-   wire [1:0] minutes;
-   wire [1:0] seconds;
-   wire alarm;
-
+  reg [1:0] alarm_hours;
+  reg [2:0] alarm_minutes;
+  
   // Replace tt_um_example with your module name:
-  tt_um_ClockAlarm my_alarm (
+  tt_um_kapilan_alarm my_alarm (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
@@ -33,15 +28,14 @@ module tb ();
       .VGND(1'b0),
 `endif
 
+     .ui_in({alarm_minutes[2:0],alarm_hours[4:0]}),
+    .uo_out(),
+    .uio_in({5'b0,alarm_minutes[5:3]}),
+    .uio_out(),
+    .uio_oe(),
+    .ena(1'b1),
     .clk(clk),
-     .rst_n(rst_n),
-     .seconds(seconds),
-     .minutes(minutes),
-     .hours(hours),
-     .alarm_minutes(alarm_minutes),
-     .alarm_hours(alarm_hours),
-     .ena(ana),
-     .alarm(alarm)
+    .rst_n(rst_n)
   );
 
 endmodule
