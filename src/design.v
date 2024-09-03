@@ -9,7 +9,7 @@ module ClockAlarm(
   //Input at which Alarm should go off
   input wire [1:0] alarm_hours,
   input wire [1:0] alarm_minutes, 
-  input wire [3:0] alarm_seconds, 
+  //input wire [3:0] alarm_seconds, 
  
   //Output time in the clock
   output reg [1:0] hours,
@@ -44,7 +44,7 @@ module ClockAlarm(
           end
 
 
-        if ((hours == alarm_hours) && (minutes == alarm_minutes) && (seconds == alarm_seconds)) begin
+        if ((hours == alarm_hours) && (minutes == alarm_minutes)) begin
                alarm <= 1'b1; 
           end else begin
                alarm <= 1'b0; 
