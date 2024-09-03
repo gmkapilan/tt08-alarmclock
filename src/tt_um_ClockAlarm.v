@@ -2,53 +2,44 @@
 module tt_um_ClockAlarm(
   input wire clk,
   input wire rst_n,
-  //Input time to the clock to preset
-  //input wire [7:0] preset_hours,
-  //input wire [7:0] preset_minutes, 
-  //input wire [7:0] preset_seconds, 
-  //Input at which Alarm should go off
-  input wire [1:0] alarm_hours,
-  input wire [3:0] alarm_minutes, 
+  input wire [4:0] alarm_hours,
+  input wire [5:0] alarm_minutes, 
   input wire ena, 
  
   //Output time in the clock
-  output reg [1:0] hours,
-  output reg [1:0] minutes, 
-  output reg [1:0] seconds, 
+  output reg [4:0] hours,
+  output reg [5:0] minutes, 
   output reg alarm
 );
 
-
-  always @(posedge clk or posedge rst_n) begin
+  reg [5:0] seconds;
+  
+  always @(posedge clk or negedge rst_n) begin
     if (rst_n) begin
           hours <= 0;
           minutes <= 0;
           seconds <= 0;
           alarm <= 1'b0;
-      end else begin
+     end else if (alarm == 0) begin
+          seconds <= seconds + 6'd1;
+     end
+     if (seconds == 6'd59) begin
+          seconds <= 2'd0;
+          minutes <= minutes + 3'd1;
+     end
 
-          seconds <= seconds + 2'd1;
+    if (minutes == 6'd59 && seconds == 6'd59) begin
+          minutes <= 3'd0;
+          hours <= hours + 5'd1;
+    end
 
-        if (seconds == 2'd3) begin
-              seconds <= 2'd0;
-              minutes <= minutes + 3'd1;
-          end
+    if (hours == 5'd23 && minutes == 6'd59 && seconds == 6'd59) begin
+          hours <= 2'd0;
+    end
 
-        if (minutes == 3'd7 && seconds == 2'd3) begin
-              minutes <= 3'd0;
-              hours <= hours + 2'd1;
-          end
-
-        if (hours == 2'd3 && minutes == 3'd7 && seconds == 2'd3) begin
-              hours <= 2'd0;
-          end
-
-
-        if ((hours == alarm_hours) && (minutes == alarm_minutes)) begin
+    if ((hours == alarm_hours) && (minutes == alarm_minutes)) begin
                alarm <= 1'b1; 
-          end else begin
-               alarm <= 1'b0; 
-          end
-      end
+    end 
   end
+  
 endmodule
