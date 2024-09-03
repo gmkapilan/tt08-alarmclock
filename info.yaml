@@ -28,8 +28,8 @@ pinout:
   ui[3]: "alarm_hours[1]"
   ui[4]: "alarm_minutes[0]"
   ui[5]: "alarm_minutes[1]"
-  ui[6]: "ena[0]"
-  ui[7]: "ena[1]"
+  ui[6]: "alarm_minutes[2]"
+  ui[7]: "ena"
 
   # Outputs
   uo[0]: "hours[0]"
