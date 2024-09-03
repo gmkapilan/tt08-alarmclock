@@ -23,7 +23,7 @@ project:
 pinout:
   # Inputs
   ui[0]: "clk"
-  ui[1]: "reset"
+  ui[1]: "rst_n"
   ui[2]: "alarm_hours[0]"
   ui[3]: "alarm_hours[1]"
   ui[4]: "alarm_minutes[0]"
