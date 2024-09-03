@@ -22,33 +22,33 @@ project:
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: "clk"
-  ui[1]: "rst_n"
-  ui[2]: "alarm_hours[0]"
-  ui[3]: "alarm_hours[1]"
-  ui[4]: "alarm_minutes[0]"
-  ui[5]: "alarm_minutes[1]"
-  ui[6]: "alarm_minutes[2]"
-  ui[7]: "ena"
+  ui[0]: "alarm_hours[0]"
+  ui[1]: "alarm_hours[1]"
+  ui[2]: "alarm_hours[2]"
+  ui[3]: "alarm_hours[3]"
+  ui[4]: "alarm_hours[4]"
+  ui[5]: "alarm_minutes[0]"
+  ui[6]: "alarm_minutes[1]"
+  ui[7]: "alarm_minutes[2]"
 
   # Outputs
   uo[0]: "hours[0]"
   uo[1]: "hours[1]"
-  uo[2]: "minutes[0]"
-  uo[3]: "minutes[1]"
-  uo[4]: "seconds[0]"
-  uo[5]: "seconds[1]"
-  uo[6]: ""
-  uo[7]: ""
+  uo[2]: "hours[2]"
+  uo[3]: "hours[3]"
+  uo[4]: "hours[4]"
+  uo[5]: "minutes[0]"
+  uo[6]: "minutes[1]"
+  uo[7]: "minutes[2]"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
+  uio[0]: "alarm_minutes[3]"
+  uio[1]: "alarm_minutes[4]"
+  uio[2]: "alarm_minutes[5]"
   uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
+  uio[4]: "minutes[3]"
+  uio[5]: "minutes[4]"
+  uio[6]: "minutes[5]"
   uio[7]: ""
 
 # Do not change!
