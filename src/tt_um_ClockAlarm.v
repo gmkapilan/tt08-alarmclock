@@ -25,7 +25,7 @@ module tt_um_ClockAlarm(
      
      if (seconds == 6'd59) begin
           seconds <= 6'd0;
-          minutes <= minutes + 3'd1;
+          minutes <= minutes + 6'd1;
      end
 
     if (minutes == 6'd59 && seconds == 6'd59) begin
