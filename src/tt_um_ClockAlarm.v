@@ -22,7 +22,7 @@ module tt_um_ClockAlarm(
           alarm <= 1'b0;
      end else if (alarm == 0) begin
           seconds <= seconds + 6'd1;
-     end
+     
      if (seconds == 6'd59) begin
           seconds <= 2'd0;
           minutes <= minutes + 3'd1;
@@ -40,6 +40,7 @@ module tt_um_ClockAlarm(
     if ((hours == alarm_hours) && (minutes == alarm_minutes)) begin
                alarm <= 1'b1; 
     end 
+  end
   end
   
 endmodule
