@@ -5,6 +5,7 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
+
 PROJECT_SOURCES = tt_um_ClockAlarm.v tt_um_kapilan_alarm.v
 
 ifneq ($(GATES),yes)
