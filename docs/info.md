@@ -60,4 +60,4 @@ endmodule
 
 ## External hardware
 
-Skywater.
+
