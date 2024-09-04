@@ -9,7 +9,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-A simple alarm clock. Input the alarm_hours and alarm_minutes to values less than 23 and 59 respectively. The output pin alarm is expected to be asserted when the internal hours and minutes hit the expected alarm_hours and alarm_minutes respectively. Alarm output will be stuck at 1 until reset. Time at which Alarm is triggered are also sent out as output.
+This project was sponsored by The MITRE Corporation and  MIT/LL Beaverworks Summer Institute https://beaverworks.ll.mit.edu/CMS/bw/bwsi . This is a simple alarm clock. There are two inputs alarm_hours and alarm_minutes. These two inputs are to be set to values less than 23 and 59 respectively. The output pin "alarm" is expected to be asserted when the internal counters hours and minutes hit the expected alarm_hours and alarm_minutes respectively. Alarm output will be stuck at 1 until reset. Time at which Alarm is triggered are also sent out as output for comparison. Due to limited number of Inputs and outputs available, some of the inout pins are used as well. output enable pins are used to mask the inputs and outputs appropriately. 
 
 ## How to test
 
